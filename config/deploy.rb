@@ -16,6 +16,7 @@ set :use_sudo, true
 set :group_writable, false
 default_run_options[:pty] = true
 ssh_options[:port] = 22
+ssh_options[:keys] = ["home/francieudo/myCert.pem"] 
 
 # ROLES
 role :app, ip_address
