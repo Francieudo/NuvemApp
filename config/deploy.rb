@@ -19,7 +19,7 @@ default_run_options[:pty] = true
 # ROLES
 role :app, ip_address
 role :web, ip_address
-role :db,  138.91.117.199, :primary => true
+role :db,  "138.91.117.199", :primary => true
 
 # HOOKS
 after 'deploy:update_code' do
