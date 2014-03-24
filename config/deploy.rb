@@ -8,8 +8,7 @@ set :repository, "git@github.com:Francieudo/NuvemApp.git"
 set :branch, "master"
 set :use_sudo, true
 
-server "138.91.113.133", :web, :app 
-server "138.91.117.199",:db, primary: true
+server "138.91.113.133", :web, :app , :db, primary: true
 
 set :deploy_to, "/home/#{user}/apps/#{application}"
 default_run_options[:pty] = true
