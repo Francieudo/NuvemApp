@@ -15,6 +15,7 @@ set :shared_directory, "#{deploy_to}/shared"
 set :use_sudo, true
 set :group_writable, false
 default_run_options[:pty] = true
+ssh_options[:port] = 22
 
 # ROLES
 role :app, ip_address
