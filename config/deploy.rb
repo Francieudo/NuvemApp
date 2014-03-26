@@ -21,7 +21,7 @@ ssh_options[:port] = 22
 # ROLES
 role :app, ip_address
 role :web, ip_address
-role :db,  "138.91.117.199", :primary => true
+role :db,  ip_address, :primary => true
 
 # HOOKS
 after 'deploy:update_code' do
