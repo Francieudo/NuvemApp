@@ -4,7 +4,7 @@ set :ip_address , "138.91.116.207"
 
 # GIT SETTINGS
 set :scm, :git
-set :repository,  "git@github.com:Francieudo/NuvemApp.git"
+set :repository, "git@github.com:Francieudo/NuvemApp.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
@@ -12,16 +12,17 @@ set :deploy_via, :remote_cache
 set :user , "francieudo"
 set :deploy_to, "var/www/#{application}"
 set :shared_directory, "#{deploy_to}/shared"
-set :use_sudo, true
+set :use_sudo, false
 set :group_writable, false
 default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 ssh_options[:port] = 22
-ssh_options[:keys] = ["home/francieudo/myCert.pem"] 
+
 
 # ROLES
 role :app, ip_address
 role :web, ip_address
-role :db,  ip_address, :primary => true
+role :db, ip_address, :primary => true
 
 # HOOKS
 after 'deploy:update_code' do
@@ -60,9 +61,9 @@ namespace :assets do
   task :symlink do
     assets.create_dir
     run <<-CMD
-      rm -rf  #{current_path}/public/system &&
-      ln -nfs #{shared_path}/system #{release_path}/public/system
-    CMD
+rm -rf #{current_path}/public/system &&
+ln -nfs #{shared_path}/system #{release_path}/public/system
+CMD
   end
 
   desc "create paperclip folder in the shared directory"
