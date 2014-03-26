@@ -38,6 +38,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development do
-	gem 'capistrano', '2.9.0'
-end
+gem "net-ssh", "~> 2.7.0"
+gem 'unicorn'
+gem 'capistrano', '2.9.0'
+

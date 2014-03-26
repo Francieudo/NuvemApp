@@ -38,6 +38,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development do
-	gem 'capistrano'
-end
+gem 'unicorn'
+gem 'capistrano', '2.9.0'
+
