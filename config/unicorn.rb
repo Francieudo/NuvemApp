@@ -2,7 +2,7 @@ worker_processes 2
 timeout 30
 listen "/tmp/unicorn.blog.sock"
  
-root = "/home/francieudo/apps/NuvemApp/current"
+root = "/var/www/NuvemApp/current"
  
 working_directory root
  
