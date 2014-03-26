@@ -1,7 +1,4 @@
 set :application, "NuvemApp"
-set :ip_address , "138.91.116.207"
-
-set :application, "NuvemApp"
 set :user, "francieudo"
 
 set :scm, :git

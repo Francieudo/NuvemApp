@@ -11,7 +11,7 @@ set :use_sudo, true
 
 server "138.91.116.207", :web
 server "138.91.116.207", :app
-server "138.91.117.199", :db, primary: true
+server "138.91.116.207", :db, primary: true
 
 set :deploy_to, "var/www/#{application}"
 default_run_options[:pty] = true
